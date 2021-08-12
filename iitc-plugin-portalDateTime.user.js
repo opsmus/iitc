@@ -4,8 +4,8 @@
 // @category       Info
 // @version        0.1.1.20210812
 // @namespace      https://github.com/IITC-CE/ingress-intel-total-conversion
-// @updateURL      https://github.com/opsmus/iitc/raw/main/IITC-plugin-user-location.user.js
-// @downloadURL    https://github.com/opsmus/iitc/raw/main/IITC-plugin-user-location.user.js
+// @updateURL      https://github.com/opsmus/iitc/raw/main/iitc-plugin-portalDateTime.user.js
+// @downloadURL    https://github.com/opsmus/iitc/raw/main/iitc-plugin-portalDateTime.user.js
 // @description    Date time of portal update
 // @include        https://*.ingress.com/intel*
 // @include        http://*.ingress.com/intel*
