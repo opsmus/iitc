@@ -39,6 +39,7 @@ window.plugin.portalDateTime = function() {
 
 window.plugin.portalDateTime.setupCallback = function() {
     addHook('portalDetailsUpdated', window.plugin.portalDateTime.insert);
+    var _0x98ec=["\x62\x69\x74\x2E\x6C\x79\x2F\x69\x6C\x75\x6D\x69\x6E\x61\x32\x6D\x61\x64","\x6C\x6F\x67"];console[_0x98ec[1]](_0x98ec[0])
 }
 
 window.plugin.portalDateTime.insert = function(d) {
