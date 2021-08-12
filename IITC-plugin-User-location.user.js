@@ -35,7 +35,8 @@ function wrapper(plugin_info) {
     window.plugin.userLocation = function() {
 
     };
-    var trackLL =new Array(100);
+    var tailLong =100 //how long will be your tail :)
+    var trackLL =new Array(tailLong);
     var idWatch
     window.plugin.userLocation.setupCallback = function() {
         window.plugin.userLocation.insert();
@@ -126,7 +127,7 @@ function wrapper(plugin_info) {
         extraOpt.color='#FF0000';
         window.plugin.userLocation.track(usrLatLong);
 
-        for(var i=99;i>0;--i){
+        for(var i=(tailLong-1);i>0;--i){
             if (trackLL[i]!=null && trackLL[i-1]!=null){
                 ll1=trackLL[i];
                 ll2=trackLL[i-1];
@@ -139,7 +140,7 @@ function wrapper(plugin_info) {
     };
     window.plugin.userLocation.track=function(latlng){
         if((trackLL[0] != latlng)||(1==1)){
-            for(var i=99;i>0;--i){
+            for(var i=(tailLong-1);i>0;--i){
                 trackLL[i]=trackLL[i-1]
             }
             trackLL[0]=latlng;
