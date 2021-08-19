@@ -51,7 +51,7 @@ function wrapper(plugin_info) {
 
     window.plugin.userLocation.routeDOM = function(d) {
         pLocation = window.portals[window.selectedPortal].getLatLng();
-        $('.linkdetails').append('<p>Route to portal: (Use Car:<input type="checkbox" id="chkUseCar"/>)<a onClick="window.plugin.userLocation.drawRoute()">Draw</a></p>');
+        $('.linkdetails').append('<p>Path to portal: (Use Car:<input type="checkbox" id="chkUseCar"/>)<a onClick="window.plugin.userLocation.drawRoute()">Draw</a></p>');
     };
     window.plugin.userLocation.drawRoute= function(){
         var sFrom,sTo;
