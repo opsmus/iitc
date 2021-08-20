@@ -2,7 +2,7 @@
 // @id             iitc-plugin-userLocation
 // @name           IITC plugin:User Location
 // @category       Info
-// @version        0.1.3.20210819
+// @version        0.1.3.20210820
 // @namespace      https://github.com/IITC-CE/ingress-intel-total-conversion
 // @updateURL      https://github.com/opsmus/iitc/raw/main/IITC-plugin-user-location.user.js
 // @downloadURL    https://github.com/opsmus/iitc/raw/main/IITC-plugin-user-location.user.js
@@ -54,12 +54,11 @@ function wrapper(plugin_info) {
         $('.linkdetails').append('<p>Path to portal: (Use Car:<input type="checkbox" id="chkUseCar"/>)<a onClick="window.plugin.userLocation.drawRoute()">Draw</a></p>');
     };
     window.plugin.userLocation.drawRoute= function(){
-        var sFrom,sTo;
-        if(typeof uLocation === 'undefined'){
-            sFrom = map.getCenter().lat + ', '+map.getCenter().lng;
-        }else{
-            sFrom = uLocation.lat + ', '+uLocation.lng;
-        }
+        navigator.geolocation.getCurrentPosition(window.plugin.userLocation.drawRouteFrom, function(){alert('No loc');}, options);
+    }
+    window.plugin.userLocation.drawRouteFrom= function(loc){
+        var sFrom,sTo;       
+        sFrom = loc.coords.latitude + ', '+loc.coords.longitude;
         sTo = pLocation.lat + ', '+pLocation.lng;
         console.log(sFrom + ' - '+sTo);
         var useCar = $("#chkUseCar").prop('checked');
