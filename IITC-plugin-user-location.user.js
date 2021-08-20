@@ -2,7 +2,7 @@
 // @id             iitc-plugin-userLocation
 // @name           IITC plugin:User Location
 // @category       Info
-// @version        0.1.3.20210819
+// @version        0.1.4.20210819
 // @namespace      https://github.com/IITC-CE/ingress-intel-total-conversion
 // @updateURL      https://github.com/opsmus/iitc/raw/main/IITC-plugin-user-location.user.js
 // @downloadURL    https://github.com/opsmus/iitc/raw/main/IITC-plugin-user-location.user.js
