@@ -51,7 +51,7 @@ function wrapper(plugin_info) {
 
     window.plugin.userLocation.routeDOM = function(d) {
         pLocation = window.portals[window.selectedPortal].getLatLng();
-        $('.linkdetails').append('<p>Path to portal: (Use Car:<input type="checkbox" id="chkUseCar"/>)<a onClick="window.plugin.userLocation.drawRoute()">Draw</a></p><p><a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&layer=traffic&destination='+pLocation.lat + ', '+pLocation.lng+'">Navigate</a></>');
+        $('.linkdetails').append('<p>Path to portal: <span id="DistanceTP"></span> (Use Car:<input type="checkbox" id="chkUseCar"/>)<a onClick="window.plugin.userLocation.drawRoute()">Draw</a></p><p><a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&layer=traffic&destination='+pLocation.lat + ', '+pLocation.lng+'">Navigate</a></>');
     };
     window.plugin.userLocation.drawRoute= function(){
         navigator.geolocation.getCurrentPosition(window.plugin.userLocation.drawRouteFrom, function(){alert('No loc');}, options);
@@ -75,6 +75,8 @@ function wrapper(plugin_info) {
                 extraOpt.color='#b827cf';
                 var lLine = L.geodesicPolyline(latLngs.latLngs, L.extend({},extraOpt,extraOpt));
                 window.plugin.userLocation.routeLayer.addLayer(lLine);
+                $('#DistanceTP').text(latLngs.length+' Km');
+
             }
         });
 
