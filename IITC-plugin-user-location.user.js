@@ -2,7 +2,7 @@
 // @id             iitc-plugin-userLocation
 // @name           IITC plugin:User Location
 // @category       Info
-// @version        0.1.3.20210820
+// @version        0.1.3.20210819
 // @namespace      https://github.com/IITC-CE/ingress-intel-total-conversion
 // @updateURL      https://github.com/opsmus/iitc/raw/main/IITC-plugin-user-location.user.js
 // @downloadURL    https://github.com/opsmus/iitc/raw/main/IITC-plugin-user-location.user.js
@@ -51,7 +51,7 @@ function wrapper(plugin_info) {
 
     window.plugin.userLocation.routeDOM = function(d) {
         pLocation = window.portals[window.selectedPortal].getLatLng();
-        $('.linkdetails').append('<p>Path to portal: (Use Car:<input type="checkbox" id="chkUseCar"/>)<a onClick="window.plugin.userLocation.drawRoute()">Draw</a></p>');
+        $('.linkdetails').append('<p>Path to portal: (Use Car:<input type="checkbox" id="chkUseCar"/>)<a onClick="window.plugin.userLocation.drawRoute()">Draw</a></p><p><a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&layer=traffic&destination='+pLocation.lat + ', '+pLocation.lng+'">Navigate</a></>');
     };
     window.plugin.userLocation.drawRoute= function(){
         navigator.geolocation.getCurrentPosition(window.plugin.userLocation.drawRouteFrom, function(){alert('No loc');}, options);
